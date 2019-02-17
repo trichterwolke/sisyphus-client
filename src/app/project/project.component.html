@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button class="hide-large menu" (click)="sidenavService.open()">
+      <mat-icon aria-label="Menü">menu</mat-icon>
+    </button>
+    <span>Projekt</span>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon aria-label="Mehr">more_vert</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<form class="form-container">
+  <div class="form-content">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Name">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-select placeholder="Favorite food">
+        <!--mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option-->
+        <mat-option>Text</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox>Inaktiv</mat-checkbox>
+  </div>
+  <div class="form-footer">
+    <button mat-raised-button color="warn" class="btn-delete">Löschen</button>
+    <span class="spacer"></span>
+    <button mat-raised-button color="primary" class="btn-save">Speichern</button>
+    <button mat-raised-button class="btn-cancel">Abbrechen</button>
+  </div>
+</form>

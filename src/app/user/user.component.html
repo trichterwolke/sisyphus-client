@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button class="hide-large menu" (click)="sidenavService.open()">
+      <mat-icon aria-label="Menü">menu</mat-icon>
+    </button>
+    <span>Benutzer</span>
+    <span class="spacer"></span>
+    <button mat-icon-button class="hide-large">
+      <mat-icon aria-label="Löschen">delete</mat-icon>
+    </button>
+    <button mat-icon-button class="hide-large">
+      <mat-icon aria-label="Speichern">done</mat-icon>
+    </button>
+    <button mat-icon-button class="hide-large">
+      <mat-icon aria-label="Abbrechen">clear</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<form class="form-container">
+  <div class="form-content">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Vorname" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Nachname" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="E-Mail" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Geburtsdatum">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="form-footer hide-small">
+    <button mat-raised-button color="warn" class="btn-delete">Löschen</button>
+    <span class="spacer"></span>
+    <button mat-raised-button color="primary" class="btn-save">Speichern</button>
+    <button mat-raised-button class="btn-cancel">Abbrechen</button>
+  </div>
+</form>
