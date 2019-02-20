@@ -1,35 +1,19 @@
-
 <mat-sidenav-container class="example-container">
-
-  <!--mode="side"-->
-  <mat-sidenav
-    #sidenav    
-    mode="over"
-    fixedInViewport="true" 
-    fixedTopGap="true"
-    fixedBottomGap="true"
-    fullscreen
-    opened > 
-    <mat-toolbar (click)="sidenavService.close()" class="hide-large">
-        <mat-toolbar-row>
-          <button mat-icon-button>
-            <mat-icon aria-label="Hide menu">arrow_back</mat-icon>
-          </button>
-        </mat-toolbar-row>
-      </mat-toolbar>
+  <mat-sidenav #sidenav fixedInViewport="true" fixedTopGap="true" fixedBottomGap="true" fullscreen [mode]="mode"
+    [opened]="opened">
+    <mat-toolbar class="hide-large">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenavService.close()">
+          <mat-icon aria-label="Hide menu">arrow_back</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
     <app-sidenav></app-sidenav>
   </mat-sidenav>
-  <mat-sidenav-content>      
+  <mat-sidenav-content>
     <!--button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button-->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<!--
-    [fixedInViewport]="options.value.fixed" 
-    [fixedTopGap]="options.value.top"
-    [fixedBottomGap]="options.value.bottom"
--->
-

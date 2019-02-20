@@ -1,8 +1,8 @@
 <mat-nav-list>
     <h2 matSubheader>Arbeitszeit</h2>
-    <a mat-list-item routerLink="/"><mat-icon>timelapse</mat-icon>Eingabe</a>
-    <a mat-list-item routerLink="/statistic"><mat-icon>equalizer</mat-icon>Statistic</a>
+    <a mat-list-item (click)="navigate('/')"><mat-icon>timelapse</mat-icon>Eingabe</a>
+    <a mat-list-item (click)="navigate('/statistic')"><mat-icon>equalizer</mat-icon>Statistic</a>
     <h2 matSubheader>Administration</h2>
-    <a mat-list-item routerLink="/project"><mat-icon>business_center</mat-icon>Projekte</a>
-    <a mat-list-item routerLink="/user"><mat-icon>people</mat-icon>Benutzer</a>
+    <a mat-list-item (click)="navigate('/project')"><mat-icon>business_center</mat-icon>Projekte</a>
+    <a mat-list-item (click)="navigate('/user')"><mat-icon>people</mat-icon>Benutzer</a>
 </mat-nav-list>

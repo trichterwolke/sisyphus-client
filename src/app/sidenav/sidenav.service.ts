@@ -1,52 +1,36 @@
 import { Subject } from 'rxjs';
-import { Router } from '@angular/router';
 
 export class SidenavService {
-    private menuIsOpen$: Subject<boolean>;
-    private menuIsOpen: boolean = false;
-//private router: Router
+    private isOpen$: Subject<boolean>;
+    public isOpen: boolean = true;
+    public mode: string;
+
     constructor() {
-        this.menuIsOpen$ = new Subject<boolean>();
-        //this.router.events.subscribe(close);
+        this.isOpen$ = new Subject<boolean>();
     }
 
-    /**
-    * If menu is open, let close it
-    */
-    public open() {
-        if (!this.menuIsOpen) {
-            this.menuIsOpen = true;
-            this.menuIsOpen$.next(false);
+    /** If menu is open, let close it */
+    public close() {
+        if (this.isOpen && this.mode != 'side') {
+            this.isOpen = false;
+            this.isOpen$.next(false);
         }
     }
 
-    /**
-     * Both silence open and close is use by navbar output, to silence switch internal flag.
-     */
-    public silenceOpen() {
-        this.menuIsOpen = true;
-    }
-    
-    public silenceClose() {
-        this.menuIsOpen = false;
-    }
-
-    /**
-    * If menu is close, let open it
-    */
-    public close() {
-        if (this.menuIsOpen) {
-            this.menuIsOpen = false;
-            this.menuIsOpen$.next(false);
+    /** If menu is close, let open it */
+    public open() {
+        if (!this.isOpen) {
+            this.isOpen = true;
+            this.isOpen$.next(true);
         }
     }
 
     public toggle() {
-        this.menuIsOpen = !this.menuIsOpen;
-        this.menuIsOpen$.next(this.menuIsOpen);
+        this.isOpen = !this.isOpen;
+        this.isOpen$.next(!this.isOpen);
     }
 
     public asObservable() {
-        return this.menuIsOpen$.asObservable();
+        return this.isOpen$.asObservable();
     }
 }
