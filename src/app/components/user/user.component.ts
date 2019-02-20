@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SidenavService } from '../sidenav/sidenav.service';
+import { UserService } from 'src/app/services/user.service';
+import { SidenavService } from 'src/app/services/sidenav.service';
 
 @Component({
   selector: 'app-user',
@@ -7,7 +8,7 @@ import { SidenavService } from '../sidenav/sidenav.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  constructor(public sidenavService: SidenavService) {
+  constructor(public sidenavService: SidenavService, private userService: UserService) {
   }
 
   ngOnInit() {

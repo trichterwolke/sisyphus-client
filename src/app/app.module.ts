@@ -18,15 +18,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-// own modules and components
+// own modules, components and servies
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ProjectComponent } from './project/project.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { UserComponent } from './user/user.component';
-import { StatisticComponent } from './statistic/statistic.component';
-import { SidenavService } from './sidenav/sidenav.service';
-import { RouterModule } from '@angular/router';
+import { AppComponent } from './components/app.component';
+import { ProjectComponent } from './components/project/project.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { StatisticComponent } from './components/statistic/statistic.component';
+import { UserComponent } from './components/user/user.component';
+import { UserDetailComponent } from './components/user/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,8 @@ import { RouterModule } from '@angular/router';
     ProjectComponent,
     SidenavComponent,
     UserComponent,
-    StatisticComponent
+    StatisticComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +52,7 @@ import { RouterModule } from '@angular/router';
     MatDatepickerModule,
     MatToolbarModule
   ],
-  providers: [SidenavService],
+  //providers: [SidenavService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { ProjectComponent } from './project/project.component'
-import { UserComponent } from './user/user.component'
-import { StatisticComponent } from './statistic/statistic.component'
+import { ProjectComponent } from './components/project/project.component';
+import { UserComponent } from './components/user/user.component';
+import { StatisticComponent } from './components/statistic/statistic.component';
 
 const routes: Routes = [ 
   { path: 'project', component: ProjectComponent },
