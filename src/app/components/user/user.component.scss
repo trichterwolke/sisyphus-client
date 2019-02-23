@@ -1,5 +1,24 @@
-/*
-.example-full-width {
+mat-table {
     width: 100%;
 }
-*/
+
+button.mat-fab {
+    position: fixed;
+    right: 40px;
+    bottom: 30px;    
+}
+
+.mat-column-id {
+    flex: 0 0 50px;
+}
+.search-box {
+    flex: 1 1 auto;
+}
+
+.fab-spacer {
+    height: 100px;
+}
+
+mat-icon {
+    outline: none;
+}

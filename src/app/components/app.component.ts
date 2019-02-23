@@ -9,7 +9,7 @@ import { SidenavService } from '../services/sidenav.service';
 })
 export class AppComponent {
     public opened = '';
-    public mode = 'side'
+    public mode = 'side';
 
     @ViewChild('sidenav')
     private sidenav: MatSidenav;

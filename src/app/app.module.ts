@@ -11,12 +11,16 @@ import {
   MatSelectModule,
   MatOptionModule,
   MatListModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatSort,
+  MatSortModule
 } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
+import { MatRippleModule } from '@angular/material/core';
 
 // own modules, components and servies
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +38,7 @@ import { UserDetailComponent } from './components/user/user-detail/user-detail.c
     SidenavComponent,
     UserComponent,
     StatisticComponent,
-    UserDetailComponent
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,10 @@ import { UserDetailComponent } from './components/user/user-detail/user-detail.c
     MatListModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
+    MatSortModule,
+    MatRippleModule
   ],
   //providers: [SidenavService, UserService],
   bootstrap: [AppComponent]

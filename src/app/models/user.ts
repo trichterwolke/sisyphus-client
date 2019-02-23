@@ -1,3 +1,7 @@
-export class User{
-    
+export class User {
+    id: number;
+    email: string;
+    firstName: string;
+    lastName: string;
+    //birthday: Date;
 }
