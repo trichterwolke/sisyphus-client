@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="top-toolbar">
   <mat-toolbar-row>
     <button mat-icon-button class="hide-large menu" (click)="sidenavService.open()">
       <mat-icon aria-label="Menü">menu</mat-icon>
@@ -52,6 +52,6 @@
 </mat-table>
 <div class="fab-spacer"></div>
 
-<button mat-fab>
-  <mat-icon aria-label="Add user" routerLink="/user/0">add</mat-icon>
+<button mat-fab routerLink="/user/0">
+  <mat-icon aria-label="Add user">add</mat-icon>
 </button>

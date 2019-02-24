@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="top-toolbar">
   <mat-toolbar-row>
     <button mat-icon-button class="hide-large menu" (click)="sidenavService.open()">
       <mat-icon aria-label="Menü">menu</mat-icon>
@@ -28,9 +28,9 @@
     <mat-checkbox>Inaktiv</mat-checkbox>
   </div>
   <div class="form-footer">
-    <button mat-raised-button color="warn" class="btn-delete">Löschen</button>
-    <span class="spacer"></span>
-    <button mat-raised-button color="primary" class="btn-save">Speichern</button>
-    <button mat-raised-button class="btn-cancel">Abbrechen</button>
+      <button mat-raised-button color="warn">Löschen</button>
+      <span class="spacer"></span>
+      <button mat-raised-button color="primary">Speichern</button>
+      <button mat-raised-button>Abbrechen</button>
   </div>
 </form>

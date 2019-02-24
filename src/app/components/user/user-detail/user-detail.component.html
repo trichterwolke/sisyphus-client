@@ -1,45 +1,90 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button mat-icon-button class="hide-large menu" (click)="sidenavService.open()">
-      <mat-icon aria-label="Menü">menu</mat-icon>
-    </button>
-    <span>Benutzer</span><mat-icon aria-label="Abbrechen">chevron_right</mat-icon><span>{{user.firstName}} {{user.lastName}}</span>
-    <span class="spacer"></span>
-    <button mat-icon-button class="hide-large">
-      <mat-icon aria-label="Löschen">delete</mat-icon>
-    </button>
-    <button mat-icon-button class="hide-large">
-      <mat-icon aria-label="Speichern">done</mat-icon>
-    </button>
-    <button mat-icon-button class="hide-large">
-      <mat-icon aria-label="Abbrechen">clear</mat-icon>
-    </button>
-  </mat-toolbar-row>
-</mat-toolbar>
-<form class="form-container">
-  <div class="form-content">
-    <mat-form-field class="full-width">
-      <input matInput placeholder="Vorname" required [value]="user.firstName">
-    </mat-form-field>
+<div class="page">
+  <!--TOOLBAR-->
+  <mat-toolbar color="primary" class="top-toolbar">
+    <mat-toolbar-row>
+      <button mat-icon-button class="hide-large menu" (click)="sidenavService.open()">
+        <mat-icon aria-label="Menü">menu</mat-icon>
+      </button>
+      <span>Benutzer</span>
+      <mat-icon aria-label="Abbrechen">chevron_right</mat-icon><span>{{user.firstName}} {{user.lastName}}</span>
+      <span class="spacer"></span>
+      <button mat-icon-button class="hide-large">
+        <mat-icon aria-label="Löschen">delete</mat-icon>
+      </button>
+      <button mat-icon-button class="hide-large">
+        <mat-icon aria-label="Speichern">done</mat-icon>
+      </button>
+      <button mat-icon-button class="hide-large">
+        <mat-icon aria-label="Abbrechen">clear</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <!--CONTENT-->
+  <div class="page-content">
+    <div class="page-container">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Straße" required [value]="user.firstName">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Straße" required [value]="user.firstName">
+      </mat-form-field>
+    </div>
+    <div class="page-container">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Straße" required [value]="user.firstName">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+          <input matInput placeholder="Vorname" required [value]="user.firstName">
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Nachname" required [value]="user.lastName">
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Titel" required [value]="user.lastName">
+        </mat-form-field>      
+    </div>
+    <div class="page-container">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Vorname" required [value]="user.firstName">
+      </mat-form-field>
 
-    <mat-form-field class="full-width">
-      <input matInput placeholder="Nachname" required [value]="user.lastName">
-    </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nachname" required [value]="user.lastName">
+      </mat-form-field>
 
-    <mat-form-field class="full-width">
-      <input matInput placeholder="E-Mail" required [value]="user.email">
-    </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Titel" required [value]="user.lastName">
+      </mat-form-field>
 
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Geburtsdatum">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker>{{ user.birthday }}</mat-datepicker>
-    </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="E-Mail" required [value]="user.email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Geburtsdatum">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker>{{ user.birthday }}</mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="page-container">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Straße" required [value]="user.firstName">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Straße" required [value]="user.firstName">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Straße" required [value]="user.firstName">
+      </mat-form-field>
+    </div>
   </div>
-  <div class="form-footer hide-small">
+  <!--FOOTER-->
+  <div class="page-footer hide-small">
     <button mat-raised-button color="warn">Löschen</button>
     <span class="spacer"></span>
     <button mat-raised-button color="primary">Speichern</button>
     <button mat-raised-button routerLink="/user">Abbrechen</button>
   </div>
-</form>
+</div>

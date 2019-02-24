@@ -7,19 +7,23 @@ import { USERS } from '../mocks/mock-users';
 //import { MessageService } from './message.service';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class UserService {
 
-  constructor() { }
+    constructor() { }
 
-  findAll(): Observable<User[]> {
-    // TODO: send the message _after_ fetching the heroes
-    //this.messageService.add('HeroService: fetched heroes');
-    return of(USERS);
-  }
+    findAll(): Observable<User[]> {
+        // TODO: send the message _after_ fetching the heroes
+        //this.messageService.add('HeroService: fetched heroes');
+        return of(USERS);
+    }
 
-  find(id: number): Observable<User> {
-    return of(USERS.find(u => u.id === id));
-  }
+    find(id: number): Observable<User> {
+        return of(USERS.find(u => u.id === id));
+    }
+
+    add(user: User) {
+        
+    }
 }
