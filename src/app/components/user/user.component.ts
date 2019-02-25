@@ -12,7 +12,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 })
 export class UserComponent implements OnInit {
 
-    displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email'];
+    displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'birthday'];
     users: User[];
     dataSource: MatTableDataSource<User>;
 

@@ -2,9 +2,7 @@
   <!--TOOLBAR-->
   <mat-toolbar color="primary" class="top-toolbar">
     <mat-toolbar-row>
-      <button mat-icon-button class="hide-large menu" (click)="sidenavService.open()">
-        <mat-icon aria-label="Menü">menu</mat-icon>
-      </button>
+      <app-menu-button></app-menu-button>
       <span>Benutzer</span>
       <mat-icon aria-label="Abbrechen">chevron_right</mat-icon><span>{{user.firstName}} {{user.lastName}}</span>
       <span class="spacer"></span>
@@ -23,68 +21,47 @@
   <div class="page-content">
     <div class="page-container">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Straße" required [value]="user.firstName">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Straße" required [value]="user.firstName">
-      </mat-form-field>
-    </div>
-    <div class="page-container">
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Straße" required [value]="user.firstName">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-          <input matInput placeholder="Vorname" required [value]="user.firstName">
-        </mat-form-field>
-  
-        <mat-form-field class="full-width">
-          <input matInput placeholder="Nachname" required [value]="user.lastName">
-        </mat-form-field>
-  
-        <mat-form-field class="full-width">
-          <input matInput placeholder="Titel" required [value]="user.lastName">
-        </mat-form-field>      
-    </div>
-    <div class="page-container">
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Vorname" required [value]="user.firstName">
+        <input matInput placeholder="Vorname" required [(ngModel)]="user.firstName">
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Nachname" required [value]="user.lastName">
+        <input matInput placeholder="Nachname" required [(ngModel)]="user.lastName">
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Titel" required [value]="user.lastName">
+        <input matInput placeholder="Titel" required [(ngModel)]="user.lastName">
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="E-Mail" required [value]="user.email">
+        <input matInput placeholder="E-Mail" required [(ngModel)]="user.email">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Geburtsdatum">
+        <input matInput [matDatepicker]="picker" placeholder="Geburtsdatum" [(ngModel)]="user.birthday">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker>{{ user.birthday }}</mat-datepicker>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
     <div class="page-container">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Straße" required [value]="user.firstName">
+        <input matInput placeholder="Straße" required [(ngModel)]="user.firstName">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Straße" required [value]="user.firstName">
+        <input matInput placeholder="PLZ" required [(ngModel)]="user.firstName">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Straße" required [value]="user.firstName">
+        <input matInput placeholder="Stadt" required [(ngModel)]="user.firstName">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Land" required [(ngModel)]="user.firstName">
       </mat-form-field>
     </div>
   </div>
   <!--FOOTER-->
   <div class="page-footer hide-small">
-    <button mat-raised-button color="warn">Löschen</button>
+    <button mat-raised-button color="warn" (click)="onDelete()">Löschen</button>
     <span class="spacer"></span>
-    <button mat-raised-button color="primary">Speichern</button>
+    <button mat-raised-button color="primary" (click)="onSave()">Speichern</button>
     <button mat-raised-button routerLink="/user">Abbrechen</button>
   </div>
 </div>

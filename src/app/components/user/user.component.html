@@ -47,6 +47,11 @@
     <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
   </ng-container>
 
+  <ng-container matColumnDef="birthday" class="hide-small">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Birthday</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.birthday | date}} </mat-cell>
+  </ng-container>
+
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row mat-ripple *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/user', row.id]"></mat-row>
 </mat-table>

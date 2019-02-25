@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 // Angular material
 import {
@@ -12,7 +13,6 @@ import {
   MatOptionModule,
   MatListModule,
   MatNativeDateModule,
-  MatSort,
   MatSortModule
 } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -30,6 +30,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { StatisticComponent } from './components/statistic/statistic.component';
 import { UserComponent } from './components/user/user.component';
 import { UserDetailComponent } from './components/user/user-detail/user-detail.component';
+import { MenuButtonComponent } from './components/shared/menu-button/menu-button.component';
+import { WorklogComponent } from './components/worklog/worklog.component';
 
 @NgModule({
   declarations: [
@@ -39,11 +41,14 @@ import { UserDetailComponent } from './components/user/user-detail/user-detail.c
     UserComponent,
     StatisticComponent,
     UserDetailComponent,
+    MenuButtonComponent,
+    WorklogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,

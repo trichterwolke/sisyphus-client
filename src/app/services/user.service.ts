@@ -11,19 +11,31 @@ import { USERS } from '../mocks/mock-users';
 })
 export class UserService {
 
-    constructor() { }
+    users: User[];
+
+    constructor() {
+        this.users = USERS;
+    }
 
     findAll(): Observable<User[]> {
-        // TODO: send the message _after_ fetching the heroes
-        //this.messageService.add('HeroService: fetched heroes');
-        return of(USERS);
+        return of(this.users);
     }
 
     find(id: number): Observable<User> {
-        return of(USERS.find(u => u.id === id));
+        return of(this.users.find(u => u.id === id));
     }
 
-    add(user: User) {
-        
+    create(user: User) {
+        this.users.push(user);
+    }
+
+    update(user: User) {
+        const index = this.users.findIndex(u => u.id === user.id);
+        this.users[index] = user;
+    }
+
+    delete(id: number) {
+        const index = this.users.findIndex(u => u.id === id);
+        this.users.splice(index, 1);
     }
 }
