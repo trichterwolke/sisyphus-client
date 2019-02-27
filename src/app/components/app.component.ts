@@ -21,8 +21,7 @@ export class AppComponent {
         this.sidenavService.asObservable().subscribe((isOpen: boolean) => {
             if (isOpen) {
                 this.sidenav.open();
-            }
-            else {
+            } else {
                 this.sidenav.close();
             }
         });
@@ -34,13 +33,12 @@ export class AppComponent {
     }
 
     private setSidenavMode(innerWidth: number) {
-        if (innerWidth > 600) {            
+        if (innerWidth > 600) {
             this.opened = '';
             this.mode = 'side'
             this.sidenavService.isOpen = true;
             this.sidenavService.mode = 'side'
-        }
-        else {
+        } else {
             this.opened = null;
             this.mode = 'over'
             this.sidenavService.isOpen = false;

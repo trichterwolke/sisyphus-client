@@ -9,10 +9,14 @@ body {
     margin: 0
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
 
 .spacer {
     flex: 1 1 auto;
@@ -25,13 +29,13 @@ h1, h2, h3, h4, h5, h6 {
 div.page {
     display: flex;
     min-height: 100vh;
-    flex-direction: column;    
-
+    flex-direction: column;
     h2 {
         text-transform: uppercase;
         color: #aaa;
     }
 }
+
 /*
 div.page-content { 
     flex: 1;    
@@ -46,11 +50,10 @@ div.page-container {
 }
 */
 
-div.page-content {    
+div.page-content {
     //display: flex;
     flex: 1;
-    width: calc(100% - 48px);
-    //margin: 2em auto;
+    width: calc(100% - 48px); //margin: 2em auto;
     column-count: 1;
     column-gap: 24px;
     padding: 0 24px;
@@ -58,8 +61,8 @@ div.page-content {
 
 div.page-container {
     /*height: 200px;*/
-    margin-top: 24px;            
-    -webkit-column-break-inside: avoid;    
+    margin-top: 24px;
+    -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
     break-inside: avoid;
     display: inline-block;
@@ -138,4 +141,13 @@ mat-toolbar.top-toolbar {
     /* Sets the sticky toolbar to be on top */
     z-index: 100;
     /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+.success-snackbar {
+    color: $app-success;
+}
+
+.error-snackbar {
+    color: mat-color($app-warn);
+    font-weight: bold;
 }

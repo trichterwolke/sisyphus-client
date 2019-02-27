@@ -21,6 +21,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatRippleModule } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 // own modules, components and servies
 import { AppRoutingModule } from './app-routing.module';
@@ -62,7 +63,8 @@ import { WorklogComponent } from './components/worklog/worklog.component';
     MatToolbarModule,
     MatTableModule,
     MatSortModule,
-    MatRippleModule
+    MatRippleModule,
+    MatSnackBarModule
   ],
   //providers: [SidenavService, UserService],
   bootstrap: [AppComponent]

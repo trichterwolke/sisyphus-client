@@ -45,19 +45,20 @@ $ctc-blue: (
 );
 
 
-$ctc-app-primary: mat-palette($ctc-blue);
-$ctc-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$app-primary: mat-palette($ctc-blue);
+$app-accent:  mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$ctc-app-warn:    mat-palette($mat-red);
+$app-warn:    mat-palette($mat-red);
+$app-success: #62ff00;
 
 // Create the theme object (a Sass map containing all of the palettes).
 $drawer-background-color: #fafafa;
 $drawer-container-background-color: white;
-$ctc-app-theme: mat-light-theme($ctc-app-primary, $ctc-app-accent, $ctc-app-warn);
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($ctc-app-theme);
+@include angular-material-theme($app-theme);
 $background: white;
