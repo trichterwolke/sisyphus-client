@@ -8,12 +8,14 @@
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
-<form class="form-container">
+<form (ngSubmit)="onSubmit()" class="form-container" #heroForm="ngForm">
   <div class="form-content">
     <mat-form-field class="full-width">
-      <input matInput placeholder="Name">
+      <input matInput placeholder="Name" [(ngModel)]="model.name"  name="name" id=name >
     </mat-form-field>
-
+    <mat-error *ngIf="formControl.hasError('required')">
+      Name is <strong>required</strong>
+    </mat-error>
     <mat-form-field class="full-width">
       <mat-select placeholder="Favorite food">
         <!--mat-option *ngFor="let food of foods" [value]="food.value">
@@ -28,7 +30,7 @@
   <div class="form-footer">
       <button mat-raised-button color="warn">Löschen</button>
       <span class="spacer"></span>
-      <button mat-raised-button color="primary">Speichern</button>
+      <button mat-raised-button color="primary" (click)="save()">Speichern</button>
       <button mat-raised-button>Abbrechen</button>
   </div>
 </form>
