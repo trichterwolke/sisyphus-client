@@ -21,8 +21,6 @@ export class UserDetailComponent implements OnInit {
     }
 
     ngOnInit() {
-
-
         this.route.params.subscribe(params => {
             const id: number = +params['id']; // (+) converts string 'id' to a number
             if (id > 0) {
@@ -37,15 +35,15 @@ export class UserDetailComponent implements OnInit {
         this.router.navigate(['/user']);
     }
 
-    public onSave() {/*
+    public onSave() {
         if (this.user.id === 0) {
             this.userService.create(this.user);
         } else {
             this.userService.update(this.user);
         }
 
-        this.router.navigate(['/user']);*/
-        this.do();
+        this.router.navigate(['/user']);
+        //this.do();
     }
 
     do() {

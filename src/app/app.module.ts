@@ -33,6 +33,8 @@ import { UserComponent } from './components/user/user.component';
 import { UserDetailComponent } from './components/user/user-detail/user-detail.component';
 import { MenuButtonComponent } from './components/shared/menu-button/menu-button.component';
 import { WorklogComponent } from './components/worklog/worklog.component';
+import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,9 +46,11 @@ import { WorklogComponent } from './components/worklog/worklog.component';
     UserDetailComponent,
     MenuButtonComponent,
     WorklogComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
