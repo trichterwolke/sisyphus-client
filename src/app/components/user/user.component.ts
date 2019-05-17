@@ -3,6 +3,7 @@ import { UserService } from 'src/app/services/user.service';
 import { SidenavService } from 'src/app/services/sidenav.service';
 import { User } from 'src/app/models/user';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MessageService } from 'src/app/services/message.service';
 
 
 @Component({
@@ -19,8 +20,13 @@ export class UserComponent implements OnInit {
     @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild(MatSort) sort: MatSort;
 
-    constructor(public sidenavService: SidenavService, private userService: UserService) {
-        userService.findAll().subscribe(users => this.dataSource = new MatTableDataSource(users));
+    constructor(
+        private message: MessageService,
+        public sidenavService: SidenavService,
+        private userService: UserService) {
+        userService.findAll().subscribe(
+            users => this.dataSource = new MatTableDataSource(users),
+            error => this.message.error(error));
     }
 
     applyFilter(filterValue: string) {
