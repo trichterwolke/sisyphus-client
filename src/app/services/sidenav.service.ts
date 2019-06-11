@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class SidenavService {
     private isOpen$: Subject<boolean>;
-    public isOpen: boolean = true;
+    public isOpen = true;
     public mode: string;
 
     constructor() {
@@ -15,7 +15,7 @@ export class SidenavService {
 
     /** If menu is open, let close it */
     public close() {
-        if (this.isOpen && this.mode != 'side') {
+        if (this.isOpen && this.mode !== 'side') {
             this.isOpen = false;
             this.isOpen$.next(false);
         }

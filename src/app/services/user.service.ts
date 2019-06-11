@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
+import { retry, catchError } from 'rxjs/operators';
 import { User } from '../models/user';
 import { USERS } from '../mocks/mock-users';
 import { MessageService } from './message.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root',
@@ -11,12 +13,19 @@ export class UserService {
 
     users: User[];
 
-    constructor(private message: MessageService) {
+    constructor(
+        private http: HttpClient,
+        private message: MessageService) {
         this.users = USERS;
     }
 
     findAll(): Observable<User[]> {
-        return of(this.users);
+
+        return this.http.get<User[]>(/*'https://wil-service.de*/'/api/User');
+            /*.pipe(
+                retry(1),
+                catchError(this.message.error),
+            );*/
     }
 
     find(id: number): Observable<User> {

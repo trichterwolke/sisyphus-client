@@ -14,9 +14,9 @@ export class SessionService {
     }
 
     public login(credentials: Credentials) {
-        this.http.post<User>('http://localhost/api/session', credentials)
+        this.http.post<User>('https://dev.wil-service.de/api/session', credentials)
             .subscribe(
-                success => this.messageService.success('Willkommen ' + success.firstName + ' ' + success.lastName ),
-                error => this.messageService.error(error.message));
+                success => this.messageService.success('Willkommen ' + success.firstName + ' ' + success.lastName + '.'),
+                error => this.messageService.error(error));
     }
 }
